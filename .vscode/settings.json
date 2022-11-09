@@ -1,0 +1,34 @@
+{
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "xprotocol"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 33060,
+            "driver": "MySQL",
+            "name": "World",
+            "group": "MySQL",
+            "database": "World",
+            "username": "root",
+            "password": "1111",
+            "connectionTimeout": 500
+        },
+        {
+            "mysqlOptions": {
+                "authProtocol": "xprotocol"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 33060,
+            "driver": "MySQL",
+            "name": "NewsFactory",
+            "group": "MySQL",
+            "database": "NewsFactory",
+            "username": "root",
+            "password": "1111",
+            "connectionTimeout": 500
+        }
+    ]
+}
