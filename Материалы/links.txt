@@ -23,4 +23,5 @@ https://metanit.com/sharp/wpf/9.3.php
 https://habr.com/ru/post/678320/
 
 https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/where-generic-type-constraint?source=recommendations
+https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/generics/constraints-on-type-parameters?redirectedfrom=MSDN
 https://levelup.gitconnected.com/5-ways-to-clone-an-object-in-c-d1374ec28efa
