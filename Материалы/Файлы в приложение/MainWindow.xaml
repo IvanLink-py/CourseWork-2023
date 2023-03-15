@@ -1,0 +1,142 @@
+﻿<Window x:Class="ProjectManager.View.Windows.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" mc:Ignorable="d"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:windows="clr-namespace:ProjectManager.ViewModels.Windows"
+        xmlns:localCommands="clr-namespace:ProjectManager.Infrastructure.Commands"
+        Title="Менеджер проектов" Height="550" Width="800">
+    <Window.DataContext>
+        <windows:MainWindowViewModel />
+    </Window.DataContext>
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="Файл">
+
+                <!-- <MenuItem Height="Добавить..."> -->
+                <!-- <MenuItem Header="Добавить существующий объект" /> -->
+                <MenuItem Header="Добавить новый объект">
+                    <MenuItem Header="Проект">
+                        <MenuItem.Command>
+                            <localCommands:CreateNewProjectCommand />
+                        </MenuItem.Command>
+                    </MenuItem>
+                    <MenuItem Header="Материал">
+                        <MenuItem.Command>
+                            <localCommands:CreateNewMaterialCommand />
+                        </MenuItem.Command>
+                    </MenuItem>
+                    <MenuItem Header="Съёмка">
+                        <MenuItem.Command>
+                            <localCommands:CreateNewFilmingCommand />
+                        </MenuItem.Command>
+                    </MenuItem>
+                    <MenuItem Header="Тег">
+                        <MenuItem.Command>
+                            <localCommands:CreateNewTagCommand />
+                        </MenuItem.Command>
+                    </MenuItem>
+                    <MenuItem Header="Работник">
+                        <MenuItem.Command>
+                            <localCommands:CreateNewPersonCommand />
+                        </MenuItem.Command>
+                    </MenuItem>
+                </MenuItem>
+                <!-- </MenuItem> -->
+
+            </MenuItem>
+            <MenuItem Header="Помощь">
+                <MenuItem Header="Синтаксис поисковой строки">
+                    <MenuItem.Command>
+                        <localCommands:OpenSyntaxHelpCommand />
+                    </MenuItem.Command>
+                </MenuItem>
+                <Separator />
+                <MenuItem Header="О программе">
+                    <MenuItem.Command>
+                        <localCommands:OpenAboutCommand />
+                    </MenuItem.Command>
+                </MenuItem>
+            </MenuItem>
+        </Menu>
+        <Grid>
+            <Grid.Resources>
+                <Style x:Key="DockPanelTrigger" TargetType="{x:Type DockPanel}">
+                    <Style.Triggers>
+                        <Trigger
+                            Property="IsMouseOver"
+                            Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ThicknessAnimation Storyboard.TargetProperty="Margin"
+                                                            To="0,0,0,0" Duration="0:0:0.2" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                            <Trigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ThicknessAnimation Storyboard.TargetProperty="Margin"
+                                                            To="-200,0,0,0" Duration="0:0:0.2" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.ExitActions>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Grid.Resources>
+
+
+            <Grid Background="Blue" Margin="50,0,0,0">
+                <Frame Content="{Binding CurrentPage}" NavigationUIVisibility="Hidden" />
+            </Grid>
+
+            <Canvas Background="#55000000" Opacity="0" Name="DropDown" IsHitTestVisible="False" />
+
+            <ContentControl MouseEnter="UIElement_OnMouseEnter" MouseLeave="UIElement_OnMouseLeave">
+                <DockPanel Background="{StaticResource DarkBG}" Width="250" HorizontalAlignment="Left"
+                           Margin="-200,0,0,0"
+                           Style="{StaticResource DockPanelTrigger}" x:Name="SidePanel">
+                    <StackPanel Margin="0,10">
+                        <StackPanel.Resources>
+                            <Style TargetType="Button">
+                                <Setter Property="Foreground" Value="White" />
+                                <Setter Property="Background" Value="Transparent" />
+                                <Setter Property="BorderBrush" Value="Transparent" />
+                                <Setter Property="Margin" Value="10,5,20,5" />
+                                <Setter Property="VerticalAlignment" Value="Center" />
+                                <Setter Property="HorizontalAlignment" Value="Left" />
+                                <Setter Property="FontFamily" Value="Gotham pro" />
+                                <Setter Property="FontWeight" Value="Black" />
+                                <Setter Property="FontSize" Value="18" />
+                            </Style>
+
+                            <Style TargetType="Image">
+                                <Setter Property="DockPanel.Dock" Value="Right" />
+                                <Setter Property="Height" Value="30" />
+                                <Setter Property="Margin" Value="10" />
+                            </Style>
+                        </StackPanel.Resources>
+                        <Button Content="News Factory" FontSize="25" HorizontalAlignment="Stretch" Margin="0,0,25,0" Command="{Binding GoToMainPageCommand}" />
+
+                        <DockPanel>
+                            <Image DockPanel.Dock="Left" Source="{StaticResource LayersDrawingImage}" />
+                            <Button Content="Проекты" Command="{Binding GoToProjectPageCommand}" />
+                        </DockPanel>
+
+                        <DockPanel>
+                            <Image DockPanel.Dock="Left" Source="{StaticResource FilmDrawingImage}" />
+                            <Button Content="Материалы" Command="{Binding GoToMaterialsPageCommand}" />
+                        </DockPanel>
+
+                        <DockPanel>
+                            <Image DockPanel.Dock="Left" Source="{StaticResource VideocamDrawingImage}" />
+                            <Button Content="Съёмки" Command="{Binding GoToFilmingPageCommand}" />
+                        </DockPanel>
+                    </StackPanel>
+                </DockPanel>
+            </ContentControl>
+        </Grid>
+    </DockPanel>
+</Window>

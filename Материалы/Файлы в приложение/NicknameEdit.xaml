@@ -1,0 +1,59 @@
+<Window x:Class="NfModels.Views.Dialogs.EditDialogs.NicknameEdit"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:dialogs="clr-namespace:NfModels.ViewModels.Dialogs"
+        mc:Ignorable="d"
+        Icon="pack://application:,,,/Data/images/Icon.png"
+        Title="Редактор подписей" Height="300" Width="600" Background="Black">
+    <Window.DataContext>
+        <dialogs:NicknameDialogViewModel />
+    </Window.DataContext>
+    <Window.Resources>
+        <Style x:Key="SpellCheckStyle" TargetType="TextBox">
+            <Setter Property="SpellCheck.IsEnabled" Value="True" />
+            <Setter Property="SpellCheck.SpellingReform" Value="PreAndPostreform" />
+            <Setter Property="Language" Value="ru-ru" />
+        </Style>
+    </Window.Resources>
+    <Grid FocusManager.FocusedElement="{Binding ElementName=NameBox}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="60" />
+        </Grid.RowDefinitions>
+        <Rectangle Grid.Row="1" Fill="White" Width="3" HorizontalAlignment="Left" Margin="18,0,0,0" Focusable="False" />
+
+        <TextBox Grid.Row="1" Name="NameBox" HorizontalAlignment="Left" VerticalContentAlignment="Center" FontSize="26"
+                 MinWidth="150" Style="{StaticResource SpellCheckStyle}" KeyDown="OnKeyDown"
+                 Text="{Binding Name}" Margin="20, 0, 0, 0" Padding="5,0"
+                 Foreground="Azure" BorderBrush="#00000000">
+            <TextBox.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                    <GradientStop Color="#8400FA" Offset="0" />
+                    <GradientStop Color="#4D00FB" Offset="1" />
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+
+        <TextBox Grid.Row="2" HorizontalAlignment="Left" VerticalContentAlignment="Center" FontSize="14"
+                 MinWidth="30" KeyDown="OnKeyDown" SpellCheck.IsEnabled="True"
+                 Style="{StaticResource SpellCheckStyle}"
+                 Text="{Binding Post}" Margin="25, 0, 0, 0" FontWeight="Bold" Padding="5,0"
+                 BorderBrush="#00000000">
+            <TextBox.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="0,4">
+                    <GradientStop Color="White" Offset="0" />
+                    <GradientStop Color="Black" Offset="1" />
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+
+        <Button Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,5,5" Height="40"
+                Width="40"
+                Background="Chartreuse" BorderBrush="Black" Content="Ok" FontWeight="Black" FontSize="15"
+                Click="ButtonBase_OnClick" />
+    </Grid>
+</Window>

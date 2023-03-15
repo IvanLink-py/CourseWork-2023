@@ -1,0 +1,77 @@
+﻿<Page x:Class="NfModels.Views.Pages.ExplorerPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:newsFactoryObjectsBase="clr-namespace:NfModels.ViewModels.Base"
+      xmlns:windows="clr-namespace:NfModels.ViewModels.Windows"
+      mc:Ignorable="d"
+      Title="Браузер" Background="White" d:DesignHeight="450" d:DesignWidth="800">
+    <Page.DataContext>
+        <windows:ExplorerViewModel />
+    </Page.DataContext>
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <TextBox Grid.Row="0" VerticalContentAlignment="Center"
+                 Text="{Binding Filter, UpdateSourceTrigger=PropertyChanged}" />
+
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+            <ItemsControl ItemsSource="{Binding Objects}">
+                <!-- <ItemsControl.ItemsPanel> -->
+                <!--     <ItemsPanelTemplate> -->
+                <!--          -->
+                <!--     </ItemsPanelTemplate> -->
+                <!-- </ItemsControl.ItemsPanel> -->
+                <ItemsControl.Resources>
+                    <DataTemplate DataType="{x:Type newsFactoryObjectsBase:TaggedObjectViewModel}">
+                        <ContentControl PreviewMouseDoubleClick="OnItemDoubleClick">
+                            <Border BorderThickness="1" BorderBrush="Black" CornerRadius="0" Padding="3,3"
+                                    Background="Aqua"
+                                    Margin="2">
+                                <!-- <Border.ToolTip> -->
+                                    <!-- <ToolTip Content="{Binding Id}" Placement="Bottom" /> -->
+                                <!-- </Border.ToolTip> -->
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="30" />
+                                        <RowDefinition Height="20" />
+                                    </Grid.RowDefinitions>
+
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="60" />
+                                        <ColumnDefinition Width="15" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="30" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <ContentPresenter Grid.Row="0" Grid.Column="0" Content="{Binding Status}"
+                                                      VerticalAlignment="Center" HorizontalAlignment="Center"
+                                                      Width="30" Height="30" />
+
+
+                                    <StackPanel Grid.Row="0" VerticalAlignment="Center" Grid.Column="2"
+                                                Orientation="Horizontal">
+                                        <TextBlock VerticalAlignment="Center" Text="{Binding Title}" FontWeight="Bold"
+                                                   FontSize="18" Margin="0,0,30,0" MaxWidth="250"  TextTrimming="CharacterEllipsis"/>
+                                        <ContentPresenter Content="{Binding Tags}" />
+                                    </StackPanel>
+
+                                    <TextBlock Grid.Row="1" VerticalAlignment="Center" Grid.Column="2"
+                                               Text="{Binding Description}" TextTrimming="WordEllipsis" MaxWidth="400"
+                                               HorizontalAlignment="Left" Padding="15,0,0,0" />
+                                    <TextBlock Grid.Row="1" VerticalAlignment="Center" Grid.Column="0"
+                                               Text="{Binding TypeName}" HorizontalAlignment="Center" Foreground="Gray" />
+                                </Grid>
+                            </Border>
+                        </ContentControl>
+                    </DataTemplate>
+                </ItemsControl.Resources>
+
+            </ItemsControl>
+        </ScrollViewer>
+    </Grid>
+</Page>

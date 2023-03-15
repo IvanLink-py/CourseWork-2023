@@ -1,0 +1,15 @@
+<Window x:Class="ProjectManager.View.Windows.SyntaxHelpWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" mc:Ignorable="d"
+        Title="Синтаксис поиска" Height="650" Width="1200">
+    <ScrollViewer>
+        <StackPanel>
+            <TextBlock Margin="20,20,20,10" FontFamily="Courier New" FontSize="25" Text="Синтаксис поиска"/>
+            <TextBlock Name="Basics" Margin="30,20,10,10" FontFamily="Courier New" />
+            <TextBlock Margin="20,20,20,10" FontFamily="Courier New" FontSize="20" Text="Функции"/>
+            <TextBlock Name="Functions" Margin="30,20,10,10" FontFamily="Courier New" />
+        </StackPanel>
+    </ScrollViewer>
+</Window>
