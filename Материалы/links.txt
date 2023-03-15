@@ -24,7 +24,7 @@ https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/generics/const
 ------------------- Домены ---------------------------------
 
 https://github.com/                                 - GitHub : Хостинг IT-проектов 
-https://mongodb.com/                                - MongoDB : Сайт разработчиков
+https://mongodb.com/                                - MongoDB : Сайт разработчиков СУБД MongoDB
 https://mongodb.github.io/mongo-csharp-driver/      - MongoDB .NET Driver : Документация по драйверу .NET MongoDB 
 https://www.nuget.org/                              - NuGet : Система управления пакетами для .NET
 https://csharpdoc.hotexamples.com/                  - Hot Examples : Агрегатор примеров использования исходного кода
@@ -33,8 +33,23 @@ https://metanit.com/                                - METANIT : Сайт о пр
 https://habr.com/ru                                 - Хабр : Коллективный блог
 https://learn.microsoft.com/                        - Microsoft Learn : онлайн-платформа для обучения по технологиям Microsoft
 
+-----------------------------------------------------------
 
-
-
-
+The Official C# .NET Driver for MongoDB [Электронный ресурс] // GitHub : Хостинг IT-проектов. URL : https://github.com/mongodb/mongo-csharp-driver (дата обращения: 22.02.2023)
+MongoDB Documentation [Электронный ресурс] // MongoDB : Сайт разработчиков СУБД MongoDB. URL : https://www.mongodb.com/docs/ (дата обращения: 27.02.2023)
+MongoDB .NET Driver API Documentation [Электронный ресурс] // MongoDB .NET Driver : Документация по драйверу .NET MongoDB. URL : https://mongodb.github.io/mongo-csharp-driver/2.18/apidocs/html/N_MongoDB_Driver.htm (дата обращения: 24.02.2023)
+Official .NET driver for MongoDB [Электронный ресурс] // NuGet : Система управления пакетами для .NET. URL : https://www.nuget.org/packages/mongodb.driver (дата обращения: 21.02.2023)
+MongoDB Driver Quick Tour [Электронный ресурс] // MongoDB .NET Driver : Документация по драйверу .NET MongoDB. URL : https://mongodb.github.io/mongo-csharp-driver/2.18/getting_started/quick_tour/ (дата обращения: 28.02.2023)
+Serialization Tutorial [Электронный ресурс] // MongoDB .NET Driver : Документация по драйверу .NET MongoDB. URL : https://mongodb.github.io/mongo-csharp-driver/1.11/serialization/ (дата обращения: 27.01.2023)
+C# Class MongoDB.Bson.IO.BsonDocumentWriter [Электронный ресурс] // Hot Examples : Агрегатор примеров использования исходного кода. URL : https://csharpdoc.hotexamples.com/class/MongoDB.Bson.IO/BsonDocumentWriter# (дата обращения: 24.01.2023)
+Using C# MongoDB Driver, how to serialize a collection of object referements? [Электронный ресурс] // Stack Overflow : Система вопросов и ответов о программировании. URL : https://stackoverflow.com/questions/27537543/using-c-sharp-mongodb-driver-how-to-serialize-a-collection-of-object-referement (дата обращения: 21.01.2023)
+Inserting .NET object into MongoDB [Электронный ресурс] // Stack Overflow : Система вопросов и ответов о программировании. URL : https://stackoverflow.com/questions/15224048/inserting-net-object-into-mongodb (дата обращения: 26.02.2023)
+Full text search in mongodb in .net [Электронный ресурс] // Stack Overflow : Система вопросов и ответов о программировании. URL : https://stackoverflow.com/questions/41356544/full-text-search-in-mongodb-in-net (дата обращения: 28.01.2023)
+In c# what does 'where T : class' mean? [Электронный ресурс] // Stack Overflow : Система вопросов и ответов о программировании. URL : https://stackoverflow.com/questions/3786774/in-c-sharp-what-does-where-t-class-mean (дата обращения: 22.01.2023)
+MongoDb custom collection serializer [Электронный ресурс] // Stack Overflow : Система вопросов и ответов о программировании. URL : https://stackoverflow.com/questions/30421379/mongodb-custom-collection-serializer (дата обращения: 25.02.2023)
+How to get File Created Date and Modified Date [Электронный ресурс] // Stack Overflow : Система вопросов и ответов о программировании. URL : https://stackoverflow.com/questions/23243336/how-to-get-file-created-date-and-modified-date (дата обращения: 23.01.2023)
+BsonExtraElements with custom serializer [Электронный ресурс] // MongoDB : Сайт разработчиков СУБД MongoDB. URL : https://www.mongodb.com/community/forums/t/bsonextraelements-with-custom-serializer/16742 (дата обращения: 01.03.2023)
+Словари ресурсов [Электронный ресурс] // METANIT : Сайт о программировании. URL : https://metanit.com/sharp/wpf/9.3.php (дата обращения: 20.02.2023)
+Generic type constraint [Электронный ресурс] // Microsoft Learn : онлайн-платформа для обучения по технологиям Microsoft. URL : https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/where-generic-type-constraint?source=recommendations (дата обращения: 26.01.2023)
+Constraints on type parameters [Электронный ресурс] // Microsoft Learn : онлайн-платформа для обучения по технологиям Microsoft. URL : https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/generics/constraints-on-type-parameters?redirectedfrom=MSDN (дата обращения: 20.02.2023)
 
